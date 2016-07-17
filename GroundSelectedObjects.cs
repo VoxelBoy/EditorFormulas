@@ -63,7 +63,7 @@ namespace EditorFormulas
 				//That means none of the 4 raycasts hit anything
 				if(smallestDistanceToGround == float.MaxValue)
 				{
-					Debug.Log("No colliders found below " + t.name + ". Its transform won't be modified.");
+					Debug.Log("No colliders found below " + t.name + " to ground it to. Its transform won't be modified.");
 					continue;
 				}
 
