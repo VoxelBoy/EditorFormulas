@@ -1,10 +1,10 @@
-# Editor Formulas
+## Editor Formulas
 
 All community submitted Editor Formulas are gathered here.
 
 A "Formula" is a single static method that has no return value but can have zero to many parameters.
 
-## Writing Formulas
+### Writing Formulas
 
 Here is a simple Formula template:  
 ```
@@ -38,7 +38,7 @@ A FormulaTemplate.cs file is provided in the [Editor Formulas Window repository]
 If you're working on a complex Formula and you're having trouble implementing everything within a single method, you can use additional *private static* methods, *static* variables, and even *nested classes*.  
 However, as a best-practice, you should suffix your additional member names with your Formula name to ensure that they are unique among all members written in all other Formulas submitted here. This is necessary since they're all compiled under the same Formulas class.
 
-## Supported parameter types
+### Supported parameter types
 
 * Int
 * Float
@@ -54,3 +54,10 @@ However, as a best-practice, you should suffix your additional member names with
 * Enum
 * LayerMask
 * More to come soon
+
+### Submitting Formulas
+1. Create a copy of the FormulaTemplate.cs file that you can find in the [Editor Formulas Window repository](https://github.com/VoxelBoy/EditorFormulasWindow)
+2. Choose a unique name for your Formula that's descriptive of what it does. Rename your file with the CamelCase version of your Formula name. Don't worry, it will automatically be *nicified* when shown in the Window.
+3. Add a public static method to the class within your file and name it **exactly** the same as your file (minus the file extension, of course)
+4. Fork this repository and submit your Formula as a pull request
+5. Your Formula will be quickly reviewed. If it's not directly accepted, you will be contacted to correct any issues found.
