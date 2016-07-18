@@ -1,4 +1,4 @@
-# Editor Fomulas
+# Editor Formulas
 
 All community submitted Editor Formulas are gathered here.
 
