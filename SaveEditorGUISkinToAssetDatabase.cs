@@ -1,5 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
+using System.Reflection;
 
 namespace EditorFormulas
 {
@@ -7,7 +8,7 @@ namespace EditorFormulas
 
 		public static void SaveEditorGUISkinToAssetDatabase()
 		{
-			var currentGUISkin = GetEditorGUISkin();
+			var currentGUISkin = typeof(GUISkin).GetField("current", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static).GetValue(null) as GUISkin;
 
 			var newGUISkin = Object.Instantiate(currentGUISkin);
 			newGUISkin.hideFlags = HideFlags.None;
