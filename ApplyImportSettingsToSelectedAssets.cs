@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 using System.Reflection;
 
@@ -8,6 +8,10 @@ namespace EditorFormulas
 
 		public static void ApplyImportSettingsToSelectedAssets(Object originalAsset)
 		{
+			if(originalAsset == null)
+			{
+				return;
+			}
 			if(!AssetDatabase.Contains(originalAsset))
 			{
 				Debug.LogError("The object given as the original asset is not in the asset database. Make sure you've specified an actual asset and not a scene object.");
