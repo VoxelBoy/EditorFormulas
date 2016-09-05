@@ -10,11 +10,12 @@ Here is a simple Formula template:
 ```
 using UnityEngine;
 
-namespace EditorFormulas
+namespace EditorFormulas.Formulas
 {
-	public static partial class Formulas
+	public static class AddOneAndLog
 	{
-		public static void AddOneAndLog (int number)
+		[FormulaAttribute ("Add One and Log", "Adds one to the given number and prints it out", "GenericAuthor")]
+		public static void Run (int number)
 		{
 			Debug.Log(number + 1);
 		}
@@ -27,16 +28,15 @@ When loaded in Editor Formulas Window, this Formula will show up like this:
 <img width="302" alt="Add One Formula" src="https://cloud.githubusercontent.com/assets/433535/16903904/9c23a6b8-4c93-11e6-852d-d5ea4fd16467.png">
 
 There are several hard requirements for how Formulas must be written:  
-* The method must be public and static
-* The method must be inside a partial Formulas class
-* The class must be inside the EditorFormulas namespace
-* The name of the file containing the formula must be exactly the same as the method name
-* The method name must be unique among all other methods
+* The name of the file and the class must match exactly.
+* The name must must be unique among all other formulas.
+* A FormulaAttribute must be added to the entry method for the formula.
+* The entry method must be public and static.
+* The class should be inside the EditorFormulas.Formulas namespace.
 
 A FormulaTemplate.cs file is provided in the [Editor Formulas Window repository](https://github.com/VoxelBoy/EditorFormulasWindow) to make it easier to create a new formula that meets these requirements.
 
-If you're working on a complex Formula and you're having trouble implementing everything within a single method, you can use additional *private static* methods, *static* variables, and even *nested classes*.  
-However, as a best-practice, you should suffix your additional member names with your Formula name to ensure that they are unique among all members written in all other Formulas submitted here. This is necessary since they're all compiled under the same Formulas class.
+If you're working on a complex Formula and you're having trouble implementing everything within a single method, you can use additional *private static* methods, *static* variables, and even *nested classes*.
 
 ### Supported parameter types
 
@@ -56,8 +56,8 @@ However, as a best-practice, you should suffix your additional member names with
 * More to come soon
 
 ### Submitting Formulas
-1. Create a copy of the FormulaTemplate.cs file that you can find in the [Editor Formulas Window repository](https://github.com/VoxelBoy/EditorFormulasWindow)
-2. Choose a unique name for your Formula that's descriptive of what it does. Rename your file with the CamelCase version of your Formula name. Don't worry, it will automatically be *nicified* when shown in the Window.
-3. Add a public static method to the class within your file and name it **exactly** the same as your file (minus the file extension, of course)
-4. Fork this repository and submit your Formula as a pull request
+1. Create a copy of the FormulaTemplate.cs file that you can find in the [Editor Formulas Window repository](https://github.com/VoxelBoy/EditorFormulasWindow).
+2. Choose a unique name for your Formula that's descriptive of what it does. Rename the file and the class with the CamelCase version of your Formula name.
+3. Modify the FormulaAttribute on the already existing Run method to pass it the formula name, tooltip, and author name.
+4. Fork this repository and submit your Formula as a pull request.
 5. Your Formula will be quickly reviewed. If it's not directly accepted, you will be contacted to correct any issues found.
