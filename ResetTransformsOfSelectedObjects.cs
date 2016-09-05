@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 
-namespace EditorFormulas
+namespace EditorFormulas.Formulas
 {
-	public static partial class Formulas {
+	public static class ResetTransformsOfSelectedObjects {
 	
-		public static void ResetTransformsOfSelectedObjects(bool resetPosition, bool resetRotation, bool resetScale, bool useWorldSpace)
+		[FormulaAttribute("Reset Transforms Of Selected Objects", "Reset the position, rotation, or scale of selected transforms", "VoxelBoy")]
+		public static void Run (bool resetPosition, bool resetRotation, bool resetScale, bool useWorldSpace)
 		{
 			var selection = Selection.GetFiltered(typeof(Transform), SelectionMode.Editable | SelectionMode.ExcludePrefab);
 			if(selection.Length == 0)

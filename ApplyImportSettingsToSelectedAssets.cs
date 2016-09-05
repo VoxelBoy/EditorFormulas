@@ -2,11 +2,12 @@ using UnityEngine;
 using UnityEditor;
 using System.Reflection;
 
-namespace EditorFormulas
+namespace EditorFormulas.Formulas
 {
-	public static partial class Formulas {
+	public static class ApplyImportSettingsToSelectedAssets {
 
-		public static void ApplyImportSettingsToSelectedAssets(Object originalAsset)
+		[FormulaAttribute ("Apply Import Settings To Selected Assets", "Applies the import settings of the originalAsset to the selected assets in Project view", "VoxelBoy")]
+		public static void Run(Object originalAsset)
 		{
 			if(originalAsset == null)
 			{

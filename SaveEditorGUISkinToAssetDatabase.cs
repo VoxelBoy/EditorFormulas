@@ -2,11 +2,12 @@ using UnityEngine;
 using UnityEditor;
 using System.Reflection;
 
-namespace EditorFormulas
+namespace EditorFormulas.Formulas
 {
-	public static partial class Formulas {
+	public static class SaveEditorGUISkinToAssetDatabase {
 
-		public static void SaveEditorGUISkinToAssetDatabase()
+		[FormulaAttribute ("Save Editor GUISkin To Asset Database", "Saves the GUISkin used by the Editor to your Project. Useful for trying to replicate Editor controls in your own tools.", "VoxelBoy")]
+		public static void Run()
 		{
 			var currentGUISkin = typeof(GUISkin).GetField("current", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static).GetValue(null) as GUISkin;
 

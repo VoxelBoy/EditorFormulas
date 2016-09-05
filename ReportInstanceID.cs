@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 
-namespace EditorFormulas
+namespace EditorFormulas.Formulas
 {
-	public static partial class Formulas {
+	public static class ReportInstanceID {
 
-		public static void ReportInstanceID()
+		[FormulaAttribute ("Report Instance ID", "Reports the instanceID of the selected object", "VoxelBoy")]
+		public static void Run()
 		{
 			if(Selection.activeObject != null)
 			{

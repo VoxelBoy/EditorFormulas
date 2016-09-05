@@ -1,14 +1,16 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 
-namespace EditorFormulas
+namespace EditorFormulas.Formulas
 {
-	public static partial class Formulas {
+	public static class ReportBoundsOfSelectedObjects {
 
-		public static void ReportBoundsOfSelectedObjects(bool reportRendererBounds, bool reportColliderBounds, bool encapsulateChildren)
+		[FormulaAttribute ("Report Bounds Of Selected Objects", "Reports the renderer or colliders bounds of the selected objects", "VoxelBoy")]
+		public static void Run(bool reportRendererBounds, bool reportColliderBounds, bool encapsulateChildren)
 		{
 			var selection = Selection.objects;
+			if(selection.Length == 0) { return; }
 			foreach(GameObject go in selection)
 			{
 				if(reportRendererBounds)

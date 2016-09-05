@@ -1,12 +1,13 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 
-namespace EditorFormulas
+namespace EditorFormulas.Formulas
 {
-	public static partial class Formulas {
-		
-		public static void ReplaceSelectedSceneObjectsWithSelectedPrefab()
+	public static class ReplaceSelectedSceneObjectsWithSelectedPrefab {
+
+		[FormulaAttribute ("Replace Selected Scene Objects With Selected Prefab", "Replaces selected scene objects with the prefab selected in Project view while maintaining the objects' world transforms", "VoxelBoy")]
+		public static void Run()
 		{
 			var prefab = new List<Object>(Selection.GetFiltered(typeof(GameObject), SelectionMode.Assets)).Find(x => AssetDatabase.IsMainAsset (x)) as GameObject;
 			if(prefab == null)

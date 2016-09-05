@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 
-namespace EditorFormulas
+namespace EditorFormulas.Formulas
 {
-	public static partial class Formulas {
+	public static class ReportSelectedObjectType {
 
-		public static void ReportSelectedObjectType()
+		[FormulaAttribute("Report Selected Object Type", "Reports the System.Type of the selected object in the Editor", "VoxelBoy")]
+		public static void Run()
 		{
 			if(Selection.activeObject == null)
 			{
