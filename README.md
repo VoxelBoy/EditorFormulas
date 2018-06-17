@@ -29,7 +29,7 @@ When loaded in Editor Formulas Window, this Formula will show up like this:
 
 There are several hard requirements for how Formulas must be written:  
 * The name of the file and the class must match exactly.
-* The name must must be unique among all other formulas.
+* The name must be unique among all other formulas.
 * A FormulaAttribute must be added to the entry method for the formula.
 * The entry method must be public and static.
 * The class should be inside the EditorFormulas.Formulas namespace.
